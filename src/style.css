@@ -1,0 +1,112 @@
+body {
+    margin: 2rem;    
+    background-color: #5F7758;
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 36px;
+    color: white;
+}
+
+.villageCard {
+    display: flex;    
+    background-color: white;
+    border-radius: 5rem;
+    margin: 2rem 0;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.villageCard h3 {
+    margin: 0;
+    font-size: 26px;
+    font-family: 'Quicksand', sans-serif;
+    background-color: rgb(255, 255, 138);
+    color: rgb(126, 126, 73);
+    padding: 0.2rem 1.5rem;
+    align-self: flex-start;
+    margin-top: -1rem;
+    border-radius: 1rem;
+    transform: rotate(-5deg);
+}
+
+.villageCard img {
+    padding: 0 1rem;
+    align-self: center;
+}
+
+.villageCard div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.villageCard p {
+    font-family: 'Inter', sans-serif;
+}
+
+.quote {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 0 2rem 0 0;
+}
+
+span {
+    padding: 0.2rem;
+    border-radius: 1rem;
+}
+
+/*Gender colors*/
+.male {background-color: rgb(178, 66, 206);}
+.female {background-color: rgb(252, 196, 92);}
+
+/*Personality colors*/
+.Cranky {background-color: blue;}
+.Jock {background-color: rgb(49, 170, 179);}
+.Lazy {background-color: rgb(71, 206, 71);}
+.Smug {background-color: rgb(151, 42, 165);}
+.Normal {background-color: coral;}
+.Peppy {background-color: crimson;}
+.Snooty{background-color: deeppink;}
+.Uchi{background-color: gold;}
+
+/*Species colors*/
+.Alligator{background-color: rgb(91, 202, 115);}
+.Anteater{background-color: rgb(170, 166, 143);}
+.Bear{background-color: rgb(214, 169, 85);}
+.Bird{background-color: rgb(125, 201, 231);}
+.Bull{background-color: rgb(201, 110, 110);}
+.Cat{background-color: rgb(156, 207, 107);}
+.Chicken{background-color: rgb(240, 166, 123);}
+.Cow{background-color: rgb(66, 66, 66);}
+.Cub{background-color: rgb(117, 107, 77);}
+.Deer{background-color: rgb(172, 145, 187);}
+.Dog{background-color: rgb(202, 130, 154);}
+.Duck{background-color: rgb(127, 157, 192);}
+.Eagle{background-color: rgb(246, 248, 96);}
+.Elephant{background-color: rgb(148, 173, 209);}
+.Frog{background-color: rgb(77, 153, 106);}
+.Goat{background-color: rgb(211, 211, 211);}
+.Gorilla{background-color: rgb(114, 104, 122);}
+.Hamster{background-color: rgb(236, 178, 112);}
+.Hippo{background-color: rgb(201, 123, 123);}
+.Horse{background-color: rgb(223, 162, 106);}
+.Kangaroo{background-color: rgb(121, 92, 92);}
+.Koala{background-color: rgb(115, 133, 127);}
+.Lion{background-color: rgb(185, 167, 62);}
+.Monkey{background-color: rgb(143, 107, 60);}
+.Mouse{background-color: rgb(95, 94, 86);}
+.Octopus{background-color: rgb(128, 85, 113);}
+.Ostrich{background-color: rgb(148, 130, 31);}
+.Penguin{background-color: rgb(81, 167, 182);}
+.Pig{background-color: rgb(175, 71, 120);}
+.Rabbit{background-color: rgb(55, 168, 149);}
+.Rhino{background-color: rgb(134, 131, 153);}
+.Sheep{background-color: rgb(216, 212, 189);}
+.Squirrel{background-color: rgb(161, 136, 145);}
+.Tiger{background-color: rgb(201, 180, 89);}
+.Wolf{background-color: rgb(99, 159, 228);}
