@@ -3,7 +3,7 @@ import React from 'react';
 let pList = ["Cranky", "Jock", "Lazy", "Normal", "Peppy", "Smug", "Snooty", "Uchi"];
 let sList = ["Alligator", "Anteater", "Bear", "Bird", "Bull", "Cat", "Chicken", "Cow", "Cub", "Deer", "Dog", "Duck",
 "Eagle", "Elephant", "Frog", "Goat", "Gorilla", "Hamster", "Hippo", "Horse", "Kangaroo", "Koala", "Lion", "Monkey",
-"Mouse", "Octopus", "Ostrich", "Penguin", "Pig", "Rabbit", "Rhino", "Sheep", "Squirrel", "Tiger", "Wolf"]
+"Mouse", "Octopus", "Ostrich", "Penguin", "Pig", "Rabbit", "Rhino", "Sheep", "Squirrel", "Tiger", "Wolf"];
 
 class Highlight extends React.Component {
     render() {
@@ -34,9 +34,10 @@ class Highlight extends React.Component {
             this.props.specie === sList[26] ? sList[26] : this.props.specie === sList[27] ? sList[27] : 
             this.props.specie === sList[28] ? sList[28] : this.props.specie === sList[29] ? sList[29] : 
             this.props.specie === sList[30] ? sList[30] : this.props.specie === sList[31] ? sList[31] : 
-            this.props.specie === sList[32] ? sList[32] : this.props.specie === sList[33] ? sList[33] : sList[34]}> {this.props.specie}</span>
+            this.props.specie === sList[32] ? sList[32] : this.props.specie === sList[33] ? sList[33] : 
+            sList[34]}> {this.props.specie}</span>
             );
-    }
+        }
     }
 }
 

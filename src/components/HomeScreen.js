@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../style.css';
-import Highlight from './Highlight';
+import VillagerCard from './VillagerCard';
 
 class HomeScreen extends Component{     
       
@@ -14,7 +14,7 @@ class HomeScreen extends Component{
 
     let villagersList = villagers.map((villager) => {
         return(
-            <div key={villager.id} className = "villageCard">
+            /*<div key={villager.id} className = "villageCard">
                 <div>      
                 <h3>{villager.name["name-USen"]}</h3>
                 <img src={villager.icon_uri} alt="villager-icon "></img>
@@ -27,7 +27,11 @@ class HomeScreen extends Component{
                 <div>
 
                 </div>
-            </div>
+            </div>*/
+
+            <VillagerCard key={villager.id} name={villager.name["name-USen"]} icon={villager.icon_uri}
+            quote={villager["catch-phrase"]} birthday={villager["birthday-string"]} personality={villager.personality}
+            specie={villager.species} gender={villager.gender}/>
         );
     });
 
