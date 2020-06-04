@@ -1,11 +1,7 @@
 import React from 'react';
+import './VillagerPrev.css'
 
 class VillagerPrev extends React.Component{ 
-    
-    constructor(props){
-        super(props);
-    }
-
     render() {
         return(
             <div className = "villagerPrev">                

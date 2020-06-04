@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import '../style.css';
-import VillagerPrev from './VillagerPrev';
+import VillagerPrev from './components/VillagerPrev';
 
 class HomeScreen extends Component{     
       

@@ -1,5 +1,6 @@
 import React from 'react';
 import Highlight from './Highlight';
+import './VillagerCard.css'
 
 class VillagerCard extends React.Component{ 
     render() {

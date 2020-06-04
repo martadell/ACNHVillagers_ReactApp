@@ -1,19 +1,42 @@
-.App {
-  text-align: center;
+body {
+  margin: 2rem;
+  background-image: url(https://cdn02.nintendo-europe.com/media/images/08_content_images/games_6/nintendo_switch_7/nswitch_animalcrossingnewhorizons/NSwitch_AnimalCrossingNewHorizons_bg_leaves_lightgreen.jpg);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 36px;
   color: white;
 }
 
-.App-link {
-  color: #5F7758;
+h2 {
+  font-family: "Inter", sans-serif;
 }
 
+h3 {
+  text-align: center;
+  font-size: 26px;
+  font-family: "Quicksand", sans-serif;
+  padding: 0.2rem 1.5rem;
+  background-color: rgb(255, 255, 138);
+  color: rgb(126, 126, 73);
+  border-radius: 1rem;
+  transform: rotate(-5deg);
+  margin-bottom: -1rem;
+}
+
+span {
+  padding: 0.2rem;
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    display: initial;
+  }
+}

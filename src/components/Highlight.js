@@ -1,4 +1,5 @@
 import React from 'react';
+import './Highlight.css'
 
 let pList = ["Cranky", "Jock", "Lazy", "Normal", "Peppy", "Smug", "Snooty", "Uchi"];
 let sList = ["Alligator", "Anteater", "Bear", "Bird", "Bull", "Cat", "Chicken", "Cow", "Cub", "Deer", "Dog", "Duck",

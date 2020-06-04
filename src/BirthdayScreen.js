@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../style.css";
-import VillagerDetails from "./VillagerCard";
+import VillagerDetails from "./components/VillagerCard";
 
 //Note: The dates never repeat, everyday is only 1 villager's birthday, that's why it will only display 1 card
 //(there are a few exceptions where it's nobody's, in that case it will be blank)
