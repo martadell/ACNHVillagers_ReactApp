@@ -5,30 +5,21 @@ import VillagerCard from './VillagerCard';
 
 class HomeScreen extends Component{     
       
-  state={imageURL: ""};
+  state={villagersList: ""};
 
   async componentDidMount() {
     const res = await axios.get("http://acnhapi.com/v1/villagers");
 
     const villagers = Object.values(res.data);
 
+    villagers.sort((a,b) =>{
+        if(a.name["name-USen"] > b.name["name-USen"]) return 1
+        if(a.name["name-USen"] < b.name["name-USen"]) return -1
+        return 0;
+    })
+
     let villagersList = villagers.map((villager) => {
         return(
-            /*<div key={villager.id} className = "villageCard">
-                <div>      
-                <h3>{villager.name["name-USen"]}</h3>
-                <img src={villager.icon_uri} alt="villager-icon "></img>
-            </div>
-                    <p className= "quote">&quot;{villager["catch-phrase"]}&quot;</p>              
-                    <p>Birthday: {villager["birthday-string"]} |                 
-                    Personality: <Highlight personality={villager.personality}/> | 
-                    Specie: <Highlight specie={villager.species}/> | 
-                    Gender: <Highlight gender = {villager.gender}/></p>
-                <div>
-
-                </div>
-            </div>*/
-
             <VillagerCard key={villager.id} name={villager.name["name-USen"]} icon={villager.icon_uri}
             quote={villager["catch-phrase"]} birthday={villager["birthday-string"]} personality={villager.personality}
             specie={villager.species} gender={villager.gender}/>

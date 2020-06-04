@@ -9,6 +9,32 @@ h1 {
     color: white;
 }
 
+h2 {
+    font-family: 'Inter', sans-serif;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    background-color: white;    
+    font-family: 'Inter', sans-serif;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  nav li a {      
+    text-decoration: none;
+    color: black;
+  }
+
+  nav li:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+  }
+
 .villageCard {
     display: flex;    
     background-color: white;
