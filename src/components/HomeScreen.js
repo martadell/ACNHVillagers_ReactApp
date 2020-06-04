@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../style.css';
-import VillagerCard from './VillagerCard';
+import VillagerPrev from './VillagerPrev';
 
 class HomeScreen extends Component{     
       
@@ -20,7 +20,7 @@ class HomeScreen extends Component{
 
     let villagersList = villagers.map((villager) => {
         return(
-            <VillagerCard key={villager.id} name={villager.name["name-USen"]} icon={villager.icon_uri}
+            <VillagerPrev key={villager.id} name={villager.name["name-USen"]} icon={villager.icon_uri}
             quote={villager["catch-phrase"]} birthday={villager["birthday-string"]} personality={villager.personality}
             specie={villager.species} gender={villager.gender}/>
         );
@@ -31,9 +31,9 @@ class HomeScreen extends Component{
 
     render(){
         return(
-            <div>
+            <main>
             {this.state.villagersList} 
-            </div>
+            </main>
         )
     }
 }

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import './App.css';
 import HomeScreen from './components/HomeScreen';
 import BirthdayScreen from './components/BirthdayScreen';
+import VillagerCard from './components/VillagerCard';
 
 export default class App extends React.Component{
 
@@ -22,6 +23,7 @@ export default class App extends React.Component{
         <Switch>
         <Route exact path="/" component={HomeScreen}/>
         <Route exact path="/birthday" component={BirthdayScreen}/>
+        <Route exact path="/details"/>
         </Switch>
       </Router>
     )

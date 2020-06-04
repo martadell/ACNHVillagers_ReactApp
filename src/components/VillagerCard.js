@@ -4,7 +4,7 @@ import Highlight from './Highlight';
 class VillagerCard extends React.Component{ 
     render() {
         return(
-            <div className = "villageCard">
+            <div className = "villagerCard">
                 <div>      
                 <h3>{this.props.name}</h3>
                 <img src={this.props.icon} alt="villager-icon "></img>
