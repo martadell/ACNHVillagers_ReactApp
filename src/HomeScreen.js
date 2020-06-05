@@ -1,40 +1,34 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import VillagerPrev from './components/VillagerPrev';
 
-class HomeScreen extends Component{     
-      
-  state={villagersList: ""};
+class HomeScreen extends Component{
 
-  async componentDidMount() {
-    const res = await axios.get("http://acnhapi.com/v1/villagers");
+    constructor(props) {
+        super(props);
+        this.villagersList = [];
+    }
 
-    const villagers = Object.values(res.data);
+    createList() {
+        let v= Array.from(this.props.villagers);
 
-    villagers.sort((a,b) =>{
-        if(a.name["name-USen"] > b.name["name-USen"]) return 1
-        if(a.name["name-USen"] < b.name["name-USen"]) return -1
-        return 0;
-    })
-
-    let villagersList = villagers.map((villager) => {
-        return(
-            <VillagerPrev key={villager.id} name={villager.name["name-USen"]} icon={villager.icon_uri}
-            quote={villager["catch-phrase"]} birthday={villager["birthday-string"]} personality={villager.personality}
-            specie={villager.species} gender={villager.gender}/>
-        );
-    });
-
-    this.setState({villagersList: villagersList});
-  }
+        this.villagersList = v.map((villager) => {
+            return(
+                <VillagerPrev key={villager.id} name={villager.name["name-USen"]} icon={villager.icon_uri}
+                quote={villager["catch-phrase"]} birthday={villager["birthday-string"]} personality={villager.personality}
+                specie={villager.species} gender={villager.gender}/>
+            );
+        });
+      }
 
     render(){
+
+        this.createList();
+
         return(
             <main>
-            {this.state.villagersList} 
+                {this.villagersList} 
             </main>
         )
     }
 }
-
 export default HomeScreen;

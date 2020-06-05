@@ -1,65 +1,51 @@
 import React, { Component } from "react";
-import axios from "axios";
 import VillagerDetails from "./components/VillagerCard";
 
 //Note: The dates never repeat, everyday is only 1 villager's birthday, that's why it will only display 1 card
 //(there are a few exceptions where it's nobody's, in that case it will be blank)
 
 class BirthdayScreen extends Component {
-  state = { birthdayVillager: "" };
+  constructor(props) {
+    super(props);
+    this.birthdayVillager = {};
+    this.date = new Date();
+  }
 
-  async componentDidMount() {
-    const res = await axios.get("http://acnhapi.com/v1/villagers");
-    const villagers = Object.values(res.data);
+  createCard() {
+    let v=Array.from(this.props.villagers);
     let villager = "no";
 
-    const date = new Date();
-
-    villagers.forEach((v) => {
-      if (
-        v.birthday ===
-        date.getDate().toString() + "/" + (date.getMonth() + 1).toString()
-      ) {
+    v.forEach((v) => {
+      if (v.birthday === this.date.getDate().toString() + "/" + (this.date.getMonth() + 1).toString()) {
         villager = v;
         return;
       }
     });
 
-    let birthdayVillager;
-
     if (villager !== "no") {
-      birthdayVillager = (
+      this.birthdayVillager = 
         <VillagerDetails key={villager.id} name={villager.name["name-USen"]} icon={villager.icon_uri}
           quote={villager["catch-phrase"]} birthday={villager["birthday-string"]} personality={villager.personality}
           specie={villager.species} gender={villager.gender}/>
-      );
     } else {
-      birthdayVillager = (
-        <div className="villagerDetails">
-          <p>
-            No one ): check again tomorrow if you can wish someone a happy
-            birthday!
-          </p>
-        </div>
-      );
+      this.birthdayVillager = 
+          <p>No one <span role="img" aria-label="pensive face">😔</span> check again tomorrow if you can wish someone a happy
+            birthday!</p>
     }
-
-    this.setState({ birthdayVillager: birthdayVillager });
   }
 
-  render() {
+render(){
+
+    this.createCard();
+
     return (
       <div>
         <h2>
-          <span role="img" aria-label="balloon">
-            🎈
-          </span>{" "}
-          Today we're throwing a birthday party to:{" "}
-          <span role="img" aria-label="balloon">
-            🎈
-          </span>
+          <span role="img" aria-label="balloon">🎈</span>
+          Today we're throwing a birthday party to:
+          <span role="img" aria-label="balloon">🎈</span>
         </h2>
-        {this.state.birthdayVillager}
+        {this.birthdayVillager}
       </div>
     );
   }
