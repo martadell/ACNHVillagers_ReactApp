@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const loadVillagers = async () => {
+const fetchVillagers = async () => {
     const res = await axios.get("http://acnhapi.com/v1/villagers");
   
     const villagers = Object.values(res.data);
@@ -15,5 +15,5 @@ const loadVillagers = async () => {
     return villagers;
 }
 
-export default loadVillagers;
+export default fetchVillagers;
   

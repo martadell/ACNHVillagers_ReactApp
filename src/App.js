@@ -1,33 +1,55 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import loadVillagers from "./loadVillagers";
+import { useDispatch, useSelector } from "react-redux";
+import { loadVillagers } from "./actions/villagers"
 import './App.css';
 import HomeScreen from './HomeScreen';
 import BirthdayScreen from './BirthdayScreen';
 import NavBar from './components/NavBar';
 
-export default class App extends React.Component{
+const useLoadVillagers = () => {
+  const dispatch = useDispatch();
 
-  state = {villagers: "", villager:""};
+  useEffect(() => {
+    dispatch(loadVillagers());
+  }, [])
+};
 
-  async componentDidMount() {
-  this.setState({villagers: await loadVillagers()});
+const useLoadingOrError = () => {
+  const loading = useSelector((state) => state.loading);
+  const error = useSelector((state) => state.error);
+  return [loading, error];
 }
 
-  render() {
-    return(
-      <Router>
-        <div>
-          <h1>Animal Crossing New Horizons Villagers Archive</h1>
-          <NavBar/>
-        </div>
-        <Switch>
-        <Route exact path="/" render = {() => (<HomeScreen villagers = {this.state.villagers}/>)}/>
-        <Route exact path="/birthday"  render = {() => (<BirthdayScreen villagers = {this.state.villagers}/>)}/>
-        <Route exact path="/details"/>
-        </Switch>
-      </Router>
-    )
-  }
+function App() {
+  useLoadVillagers();
+  const [loading, error] = useLoadingOrError();
+
+if (loading) {
+  return <div className="loading">
+    <img src="https://i.pinimg.com/originals/47/2f/5f/472f5f292d3cd67c1748aa4502ade31b.gif" 
+  alt="loading train"/>
+  <h2>Now loading...</h2>
+  </div>;
 }
+if (error) {
+  return <div>{error.toString()}</div>;
+}
+
+return (
+  <Router>
+    <div>
+      <h1>Animal Crossing New Horizons Villagers Archive</h1>
+      <NavBar/>
+    </div>
+    <Switch>
+      <Route exact path="/" component={HomeScreen}/>
+      <Route exact path="/birthday"  render = {() => (<BirthdayScreen/>)}/>
+      <Route exact path="/details"/>
+    </Switch>
+  </Router>
+);
+}
+
+export default App;
 

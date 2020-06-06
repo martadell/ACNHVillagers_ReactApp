@@ -1,34 +1,22 @@
-import React, {Component} from 'react';
+import React from 'react';
 import VillagerPrev from './components/VillagerPrev';
+import { useSelector } from "react-redux";
 
-class HomeScreen extends Component{
+export default function HomeScreen() {
 
-    constructor(props) {
-        super(props);
-        this.villagersList = [];
-    }
+    let v = useSelector(state => state.villagers);
 
-    createList() {
-        let v= Array.from(this.props.villagers);
-
-        this.villagersList = v.map((villager) => {
-            return(
-                <VillagerPrev key={villager.id} name={villager.name["name-USen"]} icon={villager.icon_uri}
-                quote={villager["catch-phrase"]} birthday={villager["birthday-string"]} personality={villager.personality}
-                specie={villager.species} gender={villager.gender}/>
-            );
-        });
-      }
-
-    render(){
-
-        this.createList();
-
+    let villagersList = v.map((villager) => { //for each villager on the list create its displaying element
         return(
-            <main>
-                {this.villagersList} 
-            </main>
+            <VillagerPrev key={villager.id} name={villager.name["name-USen"]} icon={villager.icon_uri}
+            quote={villager["catch-phrase"]} birthday={villager["birthday-string"]} personality={villager.personality}
+            specie={villager.species} gender={villager.gender}/>
+        );
+    });
+
+    return(
+        <main>
+            {villagersList} 
+        </main>
         )
-    }
 }
-export default HomeScreen;

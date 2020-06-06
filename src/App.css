@@ -35,6 +35,26 @@ span {
   border-radius: 1rem;
 }
 
+.loading {    
+  display: block;
+  margin: auto;
+  width: fit-content;
+  margin-top: 5rem;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+}
+
+.loading img {    
+  display: block;
+  margin: auto;
+  width: 10rem;
+}
+
+.loading h2 {
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   main {
     display: initial;
