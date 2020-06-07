@@ -8,7 +8,7 @@ class VillagerCard extends React.Component{
             <div className = "villagerCard">
                 <div>      
                 <h3>{this.props.name}</h3>
-                <img src={this.props.icon} alt="villager-icon "></img>
+                <img src={this.props.icon} alt="villager-icon"/>
             </div>
                     <p className= "quote">&quot;{this.props.quote}&quot;</p>              
                     <p>Birthday: {this.props.birthday} |                 

@@ -40,7 +40,7 @@ p {
   line-height: 2rem;
 }
 
-.loading {    
+.info {    
   display: block;
   margin: auto;
   width: fit-content;
@@ -50,13 +50,14 @@ p {
   border-radius: 5rem;
 }
 
-.loading img {    
+.info img {    
   display: block;
   margin: auto;
   width: 10rem;
 }
 
-.loading h2 {
+.info h2 {
+  font-size: 16pt;
   text-align: center;
 }
 

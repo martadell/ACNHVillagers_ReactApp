@@ -6,7 +6,7 @@ class VillagerPrev extends React.Component{
         return(
             <div className = "villagerPrev">                
                 <h3>{this.props.name}</h3>                
-                <img src={this.props.icon} alt="villager-icon "></img>
+                <img src={this.props.icon} alt="villager-icon"/>
             </div>
         );
     };

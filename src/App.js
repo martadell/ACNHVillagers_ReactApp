@@ -28,14 +28,16 @@ function App() {
 
 if (loading) {
   return (
-    <div className="loading">
+    <div className="info">
       <img src="https://i.pinimg.com/originals/47/2f/5f/472f5f292d3cd67c1748aa4502ade31b.gif" alt="loading train"/>
       <h2>Now loading...</h2>
     </div>
   );
 }
 if (error) {
-  return <div>{error.toString()}</div>;
+  return <div className="info">
+    <h2>{error.toString()}</h2>
+    </div>;
 }
 
 return (

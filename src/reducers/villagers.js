@@ -29,8 +29,10 @@ const villagersReducer = (state = initialState, action) => {
           villagers: action.payload,
         };
       }
+      default: {
+        return state;
+      }
     }
-    return state;
   };
 
 export default villagersReducer;
