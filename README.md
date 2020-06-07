@@ -1,3 +1,14 @@
+# Key project 03: React App
+React Frontend using an existing API
+
+Welcome to the Animal Crossing New Horizons Villagers App!
+This app displays a list of all the (villager) characters from the Nintendo Switch's game Animal Crossing New Horizons. It shows their basic data and you can search them by their name. There is also a special section for birthdays, in case you want to celebrate :) The design is inspired in the aesthetics of the game.
+
+This app uses the <a href="http://acnhapi.com/">ACNH API</a>.
+
+This project is also intented to be an extra tool for the gamers to help them know more about the characters easily, so I'm planning on making extra sections (select favourite villagers, your island villagers...). Since I didn't ahve enough time I just made this version as a base project.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
