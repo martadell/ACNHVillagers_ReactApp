@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const fetchVillagers = async () => {
-    const res = await axios.get("https://acnhapi.com/v1/villagers");
+    const res = await axios.get("http://acnhapi.com/v1/villagers");
   
     const villagers = Object.values(res.data);
   
