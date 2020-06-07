@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loadVillagers } from "./actions/villagers"
-import './App.css';
+import { loadVillagers } from "./actions/villagers";
 import HomeScreen from './HomeScreen';
 import BirthdayScreen from './BirthdayScreen';
+import DetailsScreen from './DetailsScreen';
 import NavBar from './components/NavBar';
+import './App.css';
 
 const useLoadVillagers = () => {
   const dispatch = useDispatch();
@@ -26,11 +27,12 @@ function App() {
   const [loading, error] = useLoadingOrError();
 
 if (loading) {
-  return <div className="loading">
-    <img src="https://i.pinimg.com/originals/47/2f/5f/472f5f292d3cd67c1748aa4502ade31b.gif" 
-  alt="loading train"/>
-  <h2>Now loading...</h2>
-  </div>;
+  return (
+    <div className="loading">
+      <img src="https://i.pinimg.com/originals/47/2f/5f/472f5f292d3cd67c1748aa4502ade31b.gif" alt="loading train"/>
+      <h2>Now loading...</h2>
+    </div>
+  );
 }
 if (error) {
   return <div>{error.toString()}</div>;
@@ -44,8 +46,8 @@ return (
     </div>
     <Switch>
       <Route exact path="/" component={HomeScreen}/>
-      <Route exact path="/birthday"  render = {() => (<BirthdayScreen/>)}/>
-      <Route exact path="/details"/>
+      <Route exact path="/birthday" component={BirthdayScreen}/>
+      <Route exact path="/details" component={DetailsScreen}/>
     </Switch>
   </Router>
 );

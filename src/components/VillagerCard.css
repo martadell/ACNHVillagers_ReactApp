@@ -26,11 +26,6 @@
     padding: 0 1rem;
 }
 
-.villagerCard p {
-    font-family: 'Inter', sans-serif;
-    line-height: 2rem;
-}
-
 .quote {
     font-style: italic;
     font-weight: 700;

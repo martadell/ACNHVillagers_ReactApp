@@ -10,3 +10,13 @@
     background-color: #ffffff;
     border-radius: 5rem;
 }
+
+.villagerPrev:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .villagerPrev {
+      margin: 1rem 0;
+    }
+}  

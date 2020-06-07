@@ -35,6 +35,11 @@ span {
   border-radius: 1rem;
 }
 
+p {
+  font-family: "Inter", sans-serif;
+  line-height: 2rem;
+}
+
 .loading {    
   display: block;
   margin: auto;

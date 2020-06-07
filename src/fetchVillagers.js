@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 const fetchVillagers = async () => {
     const res = await axios.get("http://acnhapi.com/v1/villagers");
   
