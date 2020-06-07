@@ -25,6 +25,7 @@ const useLoadingOrError = () => {
 function App() {
   useLoadVillagers();
   const [loading, error] = useLoadingOrError();
+  const vs = useSelector(state => state.villagers); //get the villager's list
 
 if (loading) {
   return (
@@ -40,6 +41,12 @@ if (error) {
     </div>;
 }
 
+let villagersRoutes= vs.map((villager) => { //for each villager on the list create its route element
+return(
+    <Route exact path={"/details/"+ villager.id} component={DetailsScreen} key={villager.id}/>
+  );
+});
+
 return (
   <Router>
     <div>
@@ -49,7 +56,12 @@ return (
     <Switch>
       <Route exact path="/" component={HomeScreen}/>
       <Route exact path="/birthday" component={BirthdayScreen}/>
-      <Route exact path="/details" component={DetailsScreen}/>
+      {villagersRoutes}
+      <Route path="/" render = {() => <div>
+        <p>Whoops! wrong path <span role="img" aria-label="grimancing face">😬</span> make
+        make sure you typed it right or go back <a href="/">home</a> and select a villager
+        to check their details!</p>
+      </div>}/>
     </Switch>
   </Router>
 );

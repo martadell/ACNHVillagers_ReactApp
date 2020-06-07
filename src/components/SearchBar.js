@@ -29,7 +29,8 @@ export default function SearchBar() {
     }
 
     let villagersNamesList = villagers.map((villager) => {
-        return <a key={villager.id} href="/details" className="name" onClick={() => {
+        let url = "/details/"+villager.id;
+        return <a key={villager.id} href={url} className="name" onClick={() => {
                 sessionStorage.setItem("villagerId", villager.id);}}>
                 <img src={villager.icon_uri} alt="villager-icon"/>
                     <p>{villager.name["name-USen"]}</p></a>
