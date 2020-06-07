@@ -47,9 +47,9 @@ return (
       <NavBar/>
     </div>
     <Switch>
-      <Route exact path="/" component={HomeScreen}/>
-      <Route exact path="/birthday" component={BirthdayScreen}/>
-      <Route exact path="/details" component={DetailsScreen}/>
+      <Route exact path="/ACNHVillagers_ReactApp/" component={HomeScreen}/>
+      <Route exact path="/ACNHVillagers_ReactApp/birthday" component={BirthdayScreen}/>
+      <Route exact path="/ACNHVillagers_ReactApp/details" component={DetailsScreen}/>
     </Switch>
   </Router>
 );
