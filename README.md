@@ -1,4 +1,5 @@
 # Key project 03: React App
+
 React Frontend using an existing API
 
 Welcome to the Animal Crossing New Horizons Villagers App!
@@ -6,8 +7,9 @@ This app displays a list of all the (villager) characters from the Nintendo Swit
 
 This app uses the <a href="http://acnhapi.com/">ACNH API</a>.
 
-This project is also intented to be an extra tool for the gamers to help them know more about the characters easily, so I'm planning on making extra sections (select favourite villagers, your island villagers...). Since I didn't ahve enough time I just made this version as a base project.
+This project is also intented to be an extra tool for the gamers to help them know more about the characters easily. Since I didn't have enough time I just made this version as a base project.
 
+![screenshot](https://github.com/martadell/ACNHVillagers_ReactApp/blob/master/doc/demo.gif)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
